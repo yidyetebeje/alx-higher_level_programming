@@ -7,8 +7,9 @@
  */
 int is_palindrome(listint_t **head)
 {
-    listint_t* traverse = *head;
-    listint_t* head2 = NULL;
+    listint_t *traverse = *head, *traverse2;
+    listint_t *head2 = NULL;
+
     if (*head == NULL)
     {
         return (0);
@@ -19,7 +20,7 @@ int is_palindrome(listint_t **head)
         traverse = traverse->next;
     }
     traverse = *head;
-    listint_t *traverse2 = head2;
+    traverse2 = head2;
     while (traverse != NULL)
     {
         if (traverse2->n != traverse->n)
