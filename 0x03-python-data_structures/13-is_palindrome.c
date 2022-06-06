@@ -25,12 +25,12 @@ int is_palindrome(listint_t **head)
     {
         if (traverse2->n != traverse->n)
         {
-            free_listint(&head2);
+            free_listint(head2);
             return (0);
         }
         traverse = traverse->next;
         traverse2 = traverse2->next;
     }
-    free_listint(&head2);
+    free_listint(head2);
     return (1);
 }
