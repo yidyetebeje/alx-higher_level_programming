@@ -7,4 +7,3 @@ def max_integer(my_list=[]):
         if max <= li:
             max = li
     return max
-print(max_integer([]))
