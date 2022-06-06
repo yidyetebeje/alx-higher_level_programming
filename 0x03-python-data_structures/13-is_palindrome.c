@@ -1,36 +1,32 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * is_palidrome - check a linked list is a palindrome or not
- * @head: the head of the list
- * Return: a 1 or 0
+ * is_palindrome - Checks if a linked list is palindrome
+ * @head: pointer to head of list
+ * Return: 1 if it's palindrome, 0 if not
  */
 int is_palindrome(listint_t **head)
 {
-    listint_t *traverse = *head, *traverse2;
-    listint_t *head2 = NULL;
+	int array[2048];
+	int nodos = 0;
+	int i = 0;
 
-    if (*head == NULL)
-    {
-        return (1);
-    }
-    while (traverse != NULL)
-    {
-        add_nodeint_end(&head2, traverse->n);
-        traverse = traverse->next;
-    }
-    traverse = *head;
-    traverse2 = head2;
-    while (traverse != NULL)
-    {
-        if (traverse2->n != traverse->n)
-        {
-            free_listint(head2);
-            return (0);
-        }
-        traverse = traverse->next;
-        traverse2 = traverse2->next;
-    }
-    free_listint(head2);
-    return (1);
+	if (*head == NULL || head == NULL)
+		return (1);
+
+	while (*head != NULL)
+	{
+		nodos++;
+		array[nodos - 1] = (*head)->n;
+		*head = (*head)->next;
+	}
+
+	for (i = 0; i < nodos / 2; i++)
+	{
+		if (array[i] != array[nodos - i - 1])
+		{
+			return (0);
+		}
+	}
+	return (1);
 }
