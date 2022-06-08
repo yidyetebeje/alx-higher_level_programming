@@ -1,4 +1,6 @@
 #!/usr/bin/python3
-def square_matrix_sample(matrix=[]):
-    sq_matrix = [[x**2 for x in y] for y in matrix]
-    return sq_matrix
+def square_matrix_simple(matrix=[]):
+    tmp = []
+    for x in matrix:
+        tmp.append(list(map(lambda x: x**2, x)))
+    return (tmp)
